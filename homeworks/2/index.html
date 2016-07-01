@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/utils.js"></script>
+	<title>homework 1</title>
+</head>
+<body>
+
+	<!-- for portable devices -->
+	<input type="checkbox" id="sideToggle">
+	<aside>
+		<h2>nav</h2>
+		<ul>
+			<li><a href="/index.html">Home</a></li>
+			<li><a href="/blogs.html">Blogs</a></li>
+			<li id='sidebar-selected'><a href="/homeworks.html">Homeworks</a></li>
+		</ul>
+	</aside>
+
+	<!-- header -->
+	<div class="header">
+		<h1>Homework 1</h2>
+		<img src="/img/headerbg.png" class="headerbg"/>
+	</div>
+
+	<!-- navigation bar -->
+	<div class="nav">
+		<label id='sideMenuControl' for='sideToggle'>=</label>
+		<ul class="nav-list">
+			<li><a href="/index.html">home</a></li>
+			<li><a href="/blogs.html">blogs</a></li>
+			<li id="nav-selected"><a href="/homeworks.html">homeworks</a></li>
+		</ul>
+	</div>
+	
+	<!-- content -->
+	<div class="body">
+		<div class="content-box">
+			<h1 class="content-title">homework 2 - Javascript Basics</h1>
+			<div class="content-short">
+				<p>Content below is exported from <a href="readme-homework2.md"><strong>readme-homework2.md</strong></a> using <a href="http://25.io/mou/">Mou</a></p>
+			</div>
+			<div class="content-detail">
+				<iframe src="test.html" frameborder="0" width="100%" onload="resizeIframe(this);"></iframe>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

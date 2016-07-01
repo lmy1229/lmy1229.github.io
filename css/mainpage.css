@@ -1,0 +1,15 @@
+.portrait-view {
+	margin-top: 50px;
+	text-align: center;
+}
+
+.portrait-view img {
+	width: 16vw;
+	height: 16vw;
+	min-width: 150px;
+	min-height: 150px;
+	border-style: solid;
+	border-color: white;
+	border-width: 1px;
+	border-radius: 8vw;
+}

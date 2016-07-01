@@ -4,9 +4,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mainpage.css">
 	<title>MarkLv's Homepage</title>
 </head>
 <body>
+
+	<!-- for portable devices -->
 	<input type="checkbox" id="sideToggle">
 	<aside>
 		<h2>nav</h2>
@@ -16,10 +19,14 @@
 			<li><a href="homeworks.html">Homeworks</a></li>
 		</ul>
 	</aside>
+
+	<!-- header -->
 	<div class="header">
-		<h1>This is MarkLv's homepage</h2>
+		<h1>MarkLv's homepage</h2>
 		<img src="img/headerbg.png" class="headerbg"/>
 	</div>
+
+	<!-- navigation bar -->
 	<div class="nav">
 		<label id='sideMenuControl' for='sideToggle'>=</label>
 		<ul class="nav-list">
@@ -28,8 +35,35 @@
 			<li><a href="homeworks.html">homeworks</a></li>
 		</ul>
 	</div>
-	<h1 style="margin-top: 50px">This is MarkLv's Homepage</h1>
-	<a href="demos/facebook_demo.html">Demo</a>
-	<a href="demos/sidebar_demo.html">Demo</a>
+
+	<!-- content -->
+	<div class="center">
+		<div class="portrait-view">
+			<img src="img/headportrait.jpg" />
+			<h2>Mengyang Lyu</h2>
+			<h4>Undergraduate of <em>School of Software, Tsinghua University</em></h4>
+			<a href="mailto:lmy1229@126.com" style="display: block">✉️ lmy1229@126.com</a>
+			<a href="https://github.com/lmy1229" style="display: block">Github: lmy1229</a>
+		</div>
+	</div>
+	<div class="body">
+		<h2>Recent</h2>
+		<div class="content-box">
+			<h1 class="content-title"><a href="homeworks/1/">homework 1</a></h1>
+			<p class="content-intro">Homepage design and implementation, including</p>
+			<ol>
+				<li>Self introduction</li>
+				<li>Homework display</li>
+				<li>Blogs</li>
+				<li>Releasing source code on <a href="https://github.com/lmy1229/lmy1229.github.io">Github</a></li>
+			</ol>
+		</div>
+		<div class="content-box">
+			<h1 class="content-title"><a href="homeworks/2/">homework 2</a></h1>
+			<p class="content-intro">Javascript Basics</p>
+		</div>
+		<div class="content-box"><h1><a href="blogs/first-blog.html">第一篇博客</a></h1></div>
+	</div>
+
 </body>
 </html>
