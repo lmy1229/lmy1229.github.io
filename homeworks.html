@@ -3,20 +3,35 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="css/style-big.css" media="screen and (min-width: 720px)">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>homeworks</title>
 </head>
 <body>
+	<input type="checkbox" id="sideToggle">
+	<aside>
+		<h2>nav</h2>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="blogs.html">Blogs</a></li>
+			<li id='sidebar-selected'><a href="homeworks.html">Homeworks</a></li>
+		</ul>
+	</aside>
 	<div class="header">
 		<h1>Homeworks</h2>
 		<img src="img/headerbg.png" class="headerbg"/>
 	</div>
 	<div class="nav">
+		<label id='sideMenuControl' for='sideToggle'>=</label>
 		<ul class="nav-list">
 			<li><a href="index.html">home</a></li>
 			<li><a href="blogs.html">blogs</a></li>
 			<li id="nav-selected"><a href="homeworks.html">homeworks</a></li>
 		</ul>
+	</div>
+	<div class="body">
+		<div class="content-box">
+			
+		</div>
 	</div>
 	<h1 style="margin-top: 50px">homeworks</h1>
 </body>
