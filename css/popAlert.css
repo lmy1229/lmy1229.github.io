@@ -1,0 +1,35 @@
+#popAlert-shadow {
+	background-color: black;
+	margin: 0px;
+	padding: 0px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	opacity: 0.3;
+	z-index: 0;
+}
+
+#popbox {
+	max-width: 300px;
+	min-width: 100px;
+	/*width: 50%;*/
+	background-color: white;
+	z-index: 10;
+	position: fixed;
+}
+
+#popbox-title {
+	background-color: #2786e3;
+	text-align: center;
+	-webkit-user-select: none;
+}
+
+#popbox-content {
+	text-align:  center;
+	-webkit-user-select: none;
+}
+
+#popbox-cancelbtn {
+	text-align: center;
+	margin: auto auto;
+}

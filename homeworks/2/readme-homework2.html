@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>基础实验2: js练习</title>
+
+</head>
+<body>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+<h1>基础实验2: js练习</h1>
+
+<p>吕梦扬 <br>
+2014013452 <br>
+<a href="mailto:lmy1229@126.com">lmy1229@126.com</a></p>
+
+<hr />
+
+<h2>基础练习</h2>
+
+<h4>练习1</h4>
+
+<ul>
+<li>返回值: <code>'undefined'</code></li>
+<li><p>原因: 代码中调用<code>arguments[0]</code>时,处于匿名自启动的函数的作用域中,而在这个作用域中并没有定义<code>num</code>这个变量.因此返回<code>'undefined'</code>.若要使得函数能够正常返回<code>Number</code>,需要将代码改为</p>
+
+<pre><code>  (function() {
+      return typeof arguments[0].call(func);
+  })(func.getNum);
+</code></pre></li>
+</ul>
+
+
+<h4>练习2</h4>
+
+<ul>
+<li>返回值: <code>'undefined'</code></li>
+<li>原因: <code>new</code>运算符会产生一个新的对象,并将其设置为上下文作为调用的构造函数的作用域. 但是在构造函数中返回了<code>foo</code>,是一个引用类型的实例.在这种情况下脚本引擎会将返回的引用类型作为<code>new</code>语句的返回值. 因此<code>new foo;</code>语句的返回值就是<code>foo</code>函数,而不是一个新的对象.<code>new new foo;</code>语句也类似.在<code>foo</code>这个函数的作用域中,x并没有定义.因此返回<code>undefined</code>.</li>
+</ul>
+
+
+<h4>练习3</h4>
+
+<ul>
+<li>返回值: <code>'function'</code></li>
+<li>原因: 在预编译阶段,由于<code>function bar(){...}</code>和<code>function foo(){...}</code>都是显示的函数声明,因此会被预编译. 虽然<code>var foo = '11'</code>这一行也会被预编译,但是只是为<code>foo</code>变量留出空间,并没有初始化.因此<code>foo</code>的内容还是函数.在执行<code>bar()</code>时,由于之后对于<code>foo</code>的赋值语句还没有执行,因此返回的<code>foo</code>是函数类型的.</li>
+</ul>
+
+
+<h4>练习4</h4>
+
+<ul>
+<li>返回值: <code>3</code> 和 <code>1</code></li>
+<li>原因: 由于函数<code>go()</code>在全局作用域中运行,因此返回全局作用域中的<code>x = 3</code>, 而函数<code>foo.baz.bar()</code>在<code>foo.baz</code>作用域中运行,因此返回<code>foo.baz</code>中的<code>x = 1</code></li>
+</ul>
+
+
+<h4>练习5</h4>
+
+<ul>
+<li>返回值 <code>'undefined'</code></li>
+<li>原因: 函数<code>aaa</code>中<code>{ test: 1 }</code>的大括号<code>{</code>没有和<code>return</code>写在同一行,且<code>return</code>是一个合法的语句,因此,js会认为<code>return</code>是单独的一个语句,因此函数不返回任何值,于是<code>typeof aaa()</code>获得了<code>undefined</code></li>
+</ul>
+
+
+<hr />
+
+<h2>进阶练习</h2>
+
+<h3>进阶练习1-比赛预测</h3>
+
+<h5>设计思路</h5>
+
+<ul>
+<li><p>预测比赛结果的基本思路就是模拟比赛的过程, 即模拟两个队伍进行比赛的过程,然后胜者晋级,败者淘汰. 但是由于题目中要求比赛胜利概率与实力成正比,而不是通过比较实力大小直接决出胜负,因此可能会出现很多情况,不同情况出现的概率不同.为了更加直观且便捷地展示比赛结果,以及各个结果出现的可能性,引入<strong>广义队</strong>的概念. <strong>广义队</strong>的结构如下</p>
+
+<pre><code>  var team = {
+      team1: prob1,
+      team2: prob2,
+      ...
+  }
+</code></pre>
+
+<p>  其中<code>team1...</code>表示队伍的名称,<code>prob...</code>表示该队伍出现在这个<em>广义队</em>中的可能性.</p></li>
+<li>定义了<strong>广义队</strong>之后就可以计算两个队的比赛结果了. 两个<strong>广义队</strong><em>team1</em>,<em>team2</em>的比赛结果<em>result</em>也是一个<strong>广义队</strong>.由全概率公式<em>team1</em>中的某一个队伍<em>team</em>出现在<em>result</em>中的概率是
+$$result[team] = team1[team] \cdot \sum_{t \in team2}(team2[t] \cdot \frac{abil(team)}{abil(team) + abil(t)})$$
+  在<em>team2</em>中的队伍与之类似.</li>
+<li>定义了两个<strong>广义队</strong>的比赛结果之后,需要能够模拟比赛过程,位于<code>function predict(abil, sched, country)</code>.<code>predict</code>接受3个参数:
+
+<ol>
+<li> <code>abil</code>: 用户心目中的队伍实力评分. 是一个object</li>
+<li> <code>sched</code>: 赛程表, 是一个数组. 用于扩展程序.</li>
+<li> <code>country</code>: 用户想要求胜率的队伍.
+<code>predict</code>函数接受的第2个参数<code>sched</code>为比赛的赛程表,是一个数组,该函数将<code>sched</code>数组两两比赛晋级,然后将比赛的结果继续两两比赛晋级,直到最终只有1个队伍存在(<strong>广义队</strong>).这个队伍就是最终比赛的结果.</li>
+</ol>
+</li>
+<li>本程序中引入了赛程表和<strong>广义队</strong>,使得程序扩展比较容易. 没有局限于本题中16支参赛队的限制,而是可以任意2的幂支队伍进行比赛,只需修改赛程表数组即可</li>
+</ul>
+
+
+<h4>测试结果</h4>
+
+<ul>
+<li>为了方便,一共设计了两个测试
+
+<ol>
+<li> 所有队伍的能力值相同. 此时,所有队伍胜利的概率应该都相同,为<code>0.0625</code>. 实际测试结果确实为<code>0.0625</code></li>
+<li> 有一个队伍的能力是其他队伍的9倍,由概率论知识,这个队伍的胜率是<code>0.9^4 = 0.6561</code>. 实际测试结果确实为<code>0.6561</code></li>
+</ol>
+</li>
+</ul>
+
+
+<h3>进阶练习2-查找信息</h3>
+
+<h5>思路</h5>
+
+<p>此题比较简单,直接通过<code>javascript</code>函数中的<code>arguments</code>和<code>typeof</code>来判断参数类型,根据不同的类型进行不同的处理.</p>
+
+<hr />
+
+<h2>Bonus</h2>
+
+<h3>Bonus1-找不同</h3>
+
+<p>采用了两种方法:</p>
+
+<ol>
+<li>暴力搜索法, 遍历所有第二个集合中的元素,在第一个集合中查找是否有相同的, 如果没有,则加入结果的集合中. 算法复杂度<strong>O(n*m)</strong>.其中n为第一个集合的元素个数,m为第二个集合的元素个数.</li>
+<li>首先使用JavaScript的<code>sort()</code>函数将两个集合分别排序,然后使用类似于<strong>归并</strong>的思想查找在集合2而不在集合1中的元素. 算法复杂度为<strong>O(n<em>log(n)+m</em>log(m))</strong></li>
+</ol>
+
+
+<h3>Bonus2-排序算法</h3>
+
+<p>将算法导论中的基本排序算法(冒泡,插入,选择排序)用JavaScript实现一遍, 分别为<code>bubble_sort</code>, <code>insertion_sort</code>和<code>selection_sort</code>. 这些函数均支持在第二个参数处传入一个比较函数来自定义排序的表现.</p>
+
+<hr />
+
+<h2>注意</h2>
+
+<ol>
+<li>本markdown文档为了输入公式,使用了<code>MathJax.js</code>.由于这个库本身比较大,因此采用了网络加载的形式.请在联网的情况下打开本文档,否则可能出现公式无法正常显示的问题.</li>
+<li>所有代码的测试样例请参见<code>js</code>文件尾部的<code>// for testing</code>部分.</li>
+</ol>
+
+</body>
+</html>

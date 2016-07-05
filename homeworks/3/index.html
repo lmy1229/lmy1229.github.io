@@ -4,17 +4,42 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/popAlert.css">
 	<script type="text/javascript" src="/js/utils.js"></script>
 	<script type="text/javascript" src="/js/DOM_Selector.js"></script>
 	<script type="text/javascript" src="/js/backToTop.js"></script>
+	<script type="text/javascript" src="/js/PopAlert.js"></script>
 	<script type="text/javascript">
-	window.onload = function() {
-		BackToTop.init({RightDown: true});
-		BackToTop.start();
-	}
+		window.onload = function() {
+			BackToTop.init({RightDown: true});
+			BackToTop.start();
+		}
 	</script>
-	
-	<title>homework 2</title>
+	<script type="text/javascript">
+		
+		function draggableDemo() {
+			ap = {
+				title: 'draggableDemo',
+				content: 'closeKey: Esc',
+				draggable: true,
+				closeKey: 27,
+			};
+			popAlert.init(ap);
+			popAlert.show();
+		}
+		function undraggableDemo() {
+			bp = {
+				title: 'undraggableDemo',
+				content: 'closeKey: A',
+				draggable: false,
+				closeKey: 65,
+			};
+			popAlert.init(bp);
+			popAlert.show();
+		}
+
+	</script>
+	<title>homework 3</title>
 </head>
 <body>
 
@@ -48,14 +73,18 @@
 	<!-- content -->
 	<div class="body">
 		<div class="content-box">
-			<h1 class="content-title">homework 2 - Javascript Basics</h1>
+			<h1 class="content-title">homework 3 - DOM Programming</h1>
 			<div class="content-short">
-				<p>Content below is exported from <a href="readme-homework2.md"><strong>readme-homework2.md</strong></a> using <a href="http://25.io/mou/">Mou</a></p>
-				<p>Download Source Code <a href="hw2.zip">here</a></p>
+<!-- 				<p>Content below is exported from <a href="readme-homework2.md"><strong>readme-homework2.md</strong></a> using <a href="http://25.io/mou/">Mou</a></p>
+				<p>Download Source Code <a href="hw2.zip">here</a></p> -->
+				<p>Demo for <em>Back-to-top button</em> can be seen all over the site</p>
+				<p>Demo for AlertView(drag the title bar):</p>
+				<input type="button" name="demo_input" onclick="draggableDemo()" value="draggable">
+				<input type="button" name="demo_input" onclick="undraggableDemo()" value="undraggable">
 			</div>
-			<div class="content-detail">
+<!-- 			<div class="content-detail">
 				<iframe src="readme-homework2.html" frameborder="0" width="100%" onload="resizeIframe(this);"></iframe>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	
