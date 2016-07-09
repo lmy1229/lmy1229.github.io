@@ -74,7 +74,7 @@
 		function goToTop() { 
 			var goTop = setInterval(scrollMove, 10); 
 			function scrollMove() { 
-				setScrollTop(getScrollTop() / 1.1); 
+				setScrollTop(getScrollTop() * 0.9); 
 				if (getScrollTop() < 1) clearInterval(goTop); 
 			} 
 		} 
