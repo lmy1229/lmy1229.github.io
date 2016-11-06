@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>blogs</title>
+</head>
+<body>
+
+    <!-- for portable devices -->
+    <input type="checkbox" id="sideToggle">
+    <aside>
+        <h2>nav</h2>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li id='sidebar-selected'><a href="/blogs.html">Blogs</a></li>
+            <li><a href="/homeworks.html">Homeworks</a></li>
+        </ul>
+    </aside>
+
+    <!-- header -->
+    <div class="header">
+        <h1>Blogs</h2>
+        <img src="/img/headerbg.png" class="headerbg"/>
+    </div>
+
+    <!-- navigation bar -->
+    <div class="nav">
+        <label id='sideMenuControl' for='sideToggle'>=</label>
+        <ul class="nav-list">
+            <li><a href="/index.html">home</a></li>
+            <li id="nav-selected"><a href="/blogs.html">blogs</a></li>
+            <li><a href="/homeworks.html">homeworks</a></li>
+        </ul>
+    </div>
+
+    <!-- content -->
+    <div class="body">
+        <div class="content-box">
+            <h1 class="content-title"><a href="/blogs/wechat-ticket.html">微信抢票总结</a></h1>
+            <p>前八周的微信抢票项目终于搞定了。这次抢票系统是我自己第一个按照正规并且完整的流程完成的项目。写一写自己的体会（并没有顺序，想到什么就写什么）。</p>
+            <p>1. 对于一个正规的项目而言，业务逻辑代码固然重要，但是相应的测试代码更加重要。在本次开发过程中，即使在写代码的时候已经尽可能多地考虑到了各种情况，在测试的时候，还是能够挑出错误。通过本次开发，我终于了解到了代码测试的重要性。一个负责任的开发人员应当对测试比对逻辑代码更加重视。</p>
+            <p>2. 程序的正确性与效率哪个更加重要？在本次开发中，遇到了一个问题：当服务器开多进程的时候，多个用户同时请求会引发并发错误。100个用户抢票，数据库里多出了100张票，但是相应的活动的剩余票数才少了10张，经过进一步优化调成了少90张。这个时候，有两个选择：（1）在抢票的时候给数据库加行锁，导致同时只有一个进程能够修改数据库中的数据，虽然严格保证了正确性，但是执行效率降低到了单进程。（2）牺牲一定的正确性，在抢票时，把总票数的90%作为可以抢的票的总数，于是当有非常多的人同时抢票时，即使多抢了一些票，还是能在真正的总票数之内。我们最终选择了方案1，但是，如果这个系统对于正确性的要求不那么高的话，方案2也未尝不是一个好的选择。</p>
+            <p>3. 当然，在一切优化都起不到太大的提升的话，<SPAN style="TEXT-DECORATION: line-through">氪金也是非常重要的</SPAN></p>
+            <p>4. 身体是革命的本钱，一定要注意身体的健康。这次开发流程总共4周，其中后两周我都处于感冒的状态，工作效率及其低下，就是这篇博客的时候都是在头痛欲裂的状况下写的。感冒的时候非常痛苦，感冒的时候赶ddl更加痛苦。</p>
+        </div>
+    </div>
+</body>
+</html>
